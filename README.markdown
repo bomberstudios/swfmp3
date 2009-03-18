@@ -13,8 +13,8 @@ SWFMP3 has been created using fluby, so compilation is pretty straightforward:
 
 There are some additional rake tasks available:
 
-rake release  # Build a release version of SWFMP3 (with trace() disabled)
-rake test     # Test the SWF file in your default browser
+    rake release  # Build a release version of SWFMP3 (with trace() disabled)
+    rake test     # Test the SWF file in your default browser
 
 
 Customization

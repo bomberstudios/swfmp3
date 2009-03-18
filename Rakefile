@@ -40,10 +40,15 @@ task :compile do
   puts %x(mtasc -swf #{APP}.swf -main -mx -version #{PLAYER} #{trace} #{APP}.as)
   @end = Time.now
 
+  mkdir "deploy" if !File.exist?("deploy")
+
   ["*.html","*.swf"].each do |list|
     Dir[list].each do |file|
       mv file, "deploy/#{file}"
     end
+  end
+  Dir.glob("assets/*.js").each do |file|
+    cp file, "deploy/#{File.basename(file)}"
   end
 end
 
