@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<movie width="<%= WIDTH %>" height="<%= HEIGHT %>" framerate="<%= FPS %>" version="<%= PLAYER %>">
+  <background color="<%= BGCOLOR %>"/>
+  <frame>
+    <library>
+<% Dir["assets/*.png"].each do |file| %>
+      <clip id="<%= File.basename(file,'.png') %>" import="<%= file %>"/>
+<% end %>
+<% Dir["assets/*.ttf"].each do |file| %>
+      <font id="<%= File.basename(file,'.ttf') %>" import="<%= file %>" glyphs="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ01234567890,.-_¡!áéíóúÁÉÍÓÚüÜ/• :;()¿?" />
+<% end %>
+    </library>
+  </frame>
+</movie>
